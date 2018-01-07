@@ -63,9 +63,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@rwu823/eslint-config-lint-base@https://github.com/rwu823/lint-base#eslint-config-lint-base":
+"@rwu823/eslint-config-base@https://github.com/rwu823/base#eslint-config-base":
   version "1.0.0"
-  resolved "https://github.com/rwu823/lint-base#6433573256387544274fbada672f526a3b25df60"
+  resolved "https://github.com/rwu823/base#b4ec6f38a7856ab50262c79c08de41436fa6bdbe"
 
 "@types/jest@^22.0.1":
   version "22.0.1"
@@ -1095,8 +1095,8 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
 eslint@^4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.14.0.tgz#96609768d1dd23304faba2d94b7fefe5a5447a82"
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.15.0.tgz#89ab38c12713eec3d13afac14e4a89e75ef08145"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"

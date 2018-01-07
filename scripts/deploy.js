@@ -28,11 +28,11 @@ if (TRAVIS_BRANCH === 'master') {
   if (TRAVIS_MATRIX === 'build') {
     // Push to eslint-config-base branch
     sh`
-      cd out/eslint-config-lint-base
+      cd out/eslint-config-base
       git init
       git add .
       git commit -nm '${version}'
-      git push ${tokenRepo} master:eslint-config-lint-base -f
+      git push ${tokenRepo} master:eslint-config-base -f
     `
     // Publish to NPM
     // sh`

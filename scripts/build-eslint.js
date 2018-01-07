@@ -5,14 +5,14 @@ const { version } = require('../package.json')
 
 sh`
 rm -rf out
-mkdir -p out/eslint-config-lint-base
-cp .eslintrc.json index.js out/eslint-config-lint-base
+mkdir -p out/eslint-config-base
+cp .eslintrc.json index.js out/eslint-config-base
 `.then(() =>
   write(
     stringify({
-      name: '@rwu823/eslint-config-lint-base',
+      name: '@rwu823/eslint-config-base',
       main: 'index.js',
       version,
     }),
-  ).to('out/eslint-config-lint-base/package.json'),
+  ).to('out/eslint-config-base/package.json'),
 )
