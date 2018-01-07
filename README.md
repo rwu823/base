@@ -25,7 +25,7 @@ Everything you need. it includes:
 
 ```sh
 yarn add --dev \
-https://github.com/rwu823/base#eslint-config-base \
+https://github.com/rwu823/base\#eslint-config-base \
 https://github.com/rwu823/base
 ```
 
