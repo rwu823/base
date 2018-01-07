@@ -1,0 +1,58 @@
+{
+  "name": "@rwu823/base",
+  "description": "The infrastructure of init project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "base-init": "bin/base-init"
+  },
+  "repository": "https://github.com/rwu823/base.git",
+  "author": "Rocky Wu <rwu823@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^22.0.1",
+    "jest": "^22.0.4",
+    "npm-run-all": "^4.1.2",
+    "sh-exec": "^0.1.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "chalk": "^2.3.0",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
+    "glob": "^7.1.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^2.6.2",
+    "typescript-styled-plugin": "^0.2.2"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "eslint . --ignore-path .gitignore",
+    "build:eslint": "node scripts/build-eslint",
+    "build": "run-p build:*"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write --parser typescript",
+      "git add"
+    ],
+    "*.{js,jsx,css,md}": [
+      "prettier --write --parser babylon",
+      "git add"
+    ]
+  }
+}

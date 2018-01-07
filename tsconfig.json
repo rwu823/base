@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      { "name": "typescript-styled-plugin" }
+    ],
+
+    /* =Module Resolution Options */
+    // "baseUrl": ".",
+    // "paths": {
+
+    // },
+
+    /* =Basic Options */
+    "target": "es6",
+    "lib": [
+      "es2015",
+      "es2016"
+    ],
+    // "allowJs": true,
+    // "checkJs": true,
+    "removeComments": true,
+    "jsx": "preserve",
+    "declaration": true,
+    "outDir": "out/src",
+    "module": "commonjs",
+    "typeRoots": [
+      "node_modules/@types",
+      "./types"
+    ],
+
+    /* =Strict Type-Checking Options */
+    "strict": true,
+    // "noImplicitAny": true,
+    // "strictNullChecks": true,
+    // "strictFunctionTypes": true,
+    // "noImplicitThis": true,
+    // "alwaysStrict": true,
+
+    /* =Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+  }
+}

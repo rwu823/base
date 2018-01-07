@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "eslint-config-airbnb",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "shelljs": true
+  },
+  "parser": "babel-eslint",
+  "plugins": ["prettier"],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+
+  "rules": {
+    "no-unused-expressions": [2, { "allowTaggedTemplates": true }],
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "no-debugger": "off",
+
+    "no-param-reassign": [2, { "props": false }],
+    "no-unused-vars": [
+      2,
+      { "vars": "all", "args": "none", "ignoreRestSiblings": true }
+    ],
+
+    "prettier/prettier": 2,
+
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": "off",
+    "react/prop-types": [
+      2,
+      {
+        "ignore": ["children", "style", "location"]
+      }
+    ],
+
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  }
+}
