@@ -24,7 +24,9 @@ Everything you need. it includes:
 ## Installation
 
 ```sh
-yarn add --dev https://github.com/rwu823/base
+yarn add --dev \
+https://github.com/rwu823/base#eslint \
+https://github.com/rwu823/base
 ```
 
 ## Initialization
