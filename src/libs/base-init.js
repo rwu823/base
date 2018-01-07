@@ -36,7 +36,8 @@ Promise.all([
   } else {
     write(`const base = require('${packageJSON.name}/prettier.config')
 
-module.exports = Object.assign(base, {})`).to('prettier.config.js')
+module.exports = Object.assign(base, {})
+`).to('prettier.config.js')
   }
 
   /**

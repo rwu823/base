@@ -4,7 +4,7 @@ const write = require('./write')
 const pkg = require('../../package.json')
 
 module.exports = async fileName => {
-  const txt = (await readFile(`${fileName}.json`)).toString()
+  const txt = await readFile(`${fileName}.json`)
   const rc = parseJSON(txt)
 
   let fillTxt = ''
