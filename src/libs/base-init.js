@@ -92,14 +92,15 @@ module.exports = Object.assign(base, {})
       await mkdir('.vscode')
     }
 
-    write(`// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387\n
-      ${stringify(
+    write(
+      `// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387\n${stringify(
         parseJSON(
           await readFile(
             `node_modules/${packageJSON.name}/.vscode/launch.json`,
           ),
         ),
-      )}`).to('.vscode/launch.json')
+      )}`,
+    ).to('.vscode/launch.json')
   }
 })
 
