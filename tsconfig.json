@@ -25,7 +25,7 @@
     "removeComments": true,
     "jsx": "preserve",
     "declaration": true,
-    "outDir": "out/src",
+    "outDir": "out",
     "module": "commonjs",
     "typeRoots": [
       "node_modules/@types",
