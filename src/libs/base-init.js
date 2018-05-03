@@ -88,7 +88,7 @@ module.exports = Object.assign(base, {})
   if (vscodeLaunchJSONs.length) {
     console.log(`${c.cyan(vscodeLaunchJSONs[0])} is already exist.`)
   } else {
-    if (!await exists('.vscode')) {
+    if (!(await exists('.vscode'))) {
       await mkdir('.vscode')
     }
 
