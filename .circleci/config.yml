@@ -40,16 +40,16 @@ jobs:
           paths:
             - node_modules
 
-    Deploy:
-      <<: *init
-      steps:
-        - setup_remote_docker:
-            docker_layer_caching: true
-        - checkout
-        - restore_cache:
-            key: node_modules#{{ checksum "package-lock.json" }}
-        - run: npm i
-        - run: node scripts/deploy
+  Deploy:
+    <<: *init
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - restore_cache:
+          key: node_modules#{{ checksum "package-lock.json" }}
+      - run: npm i
+      - run: node scripts/deploy
 
 workflows:
   version: 2
