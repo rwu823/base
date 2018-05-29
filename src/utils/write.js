@@ -18,8 +18,7 @@ class Write {
       sr.push(p.text)
       sr.push(null)
 
-      sr
-        .pipe(createWriteStream(fileName))
+      sr.pipe(createWriteStream(fileName))
         .on('finish', res => {
           console.log(`Updated ${c.cyan(fileName)}`)
           resolve(res)
