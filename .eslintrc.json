@@ -27,7 +27,6 @@
     "consistent-return": 0,
     "no-underscore-dangle": 0,
     "no-debugger": 0,
-
     "no-param-reassign": [2, { "props": false }],
     "no-unused-vars": [
       2,
@@ -36,7 +35,9 @@
 
     "prettier/prettier": 2,
 
-    "react/jsx-curly-brace-presence": ["always", "always"],
+    "react/jsx-curly-brace-presence": [2,
+      { "props": "always", "children": "never" }
+    ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": 0,
     "react/prop-types": [
