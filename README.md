@@ -2,8 +2,8 @@
   Infrastructure
 </p>
 <p align="center">
-  <a href="https://travis-ci.org/rwu823/base" alt="Build Status">
-    <img src="https://img.shields.io/travis/rwu823/base.svg?style=flat-square&" />
+  <a href="https://circleci.com/gh/rwu823/base" alt="Build Status">
+    <img src="https://circleci.com/gh/rwu823/base.svg" />
   </a>
   <a href="https://codecov.io/gh/rwu823/base" alt="Coverage">
     <img src="https://img.shields.io/codecov/c/github/rwu823/base/BRANCH.svg?style=flat-square&" />
