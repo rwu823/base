@@ -32,8 +32,7 @@ if (TRAVIS_BRANCH === 'master') {
       git init
       git add .
       git commit -nm '${version}'
-      git tag '${version}-eslint'
-      git push ${tokenRepo} ${version}-eslint
+      git push ${tokenRepo} HEAD:eslint-config-base -f
     `
     // Publish to NPM
     // sh`
