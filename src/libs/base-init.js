@@ -104,4 +104,4 @@ module.exports = Object.assign(base, {})
   }
 })
 
-process.on('unhandledRejection', r => console.log(r.stack))
+process.on('unhandledRejection', (r) => console.log(r.stack))

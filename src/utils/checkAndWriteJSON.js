@@ -3,7 +3,7 @@ const { parseJSON } = require('./JSON')
 const write = require('./write')
 const pkg = require('../../package.json')
 
-module.exports = async fileName => {
+module.exports = async (fileName) => {
   const txt = await readFile(`${fileName}.json`)
   const rc = parseJSON(txt)
 
@@ -12,12 +12,12 @@ module.exports = async fileName => {
   if (Array.isArray(rc.extends)) {
     fillTxt = txt.replace(
       /"extends"[^[]*\[/,
-      m => `${m}\n"${pkg.name}/${fileName}",`,
+      (m) => `${m}\n"${pkg.name}/${fileName}",`,
     )
   } else {
     fillTxt = txt.replace(
       /\{/,
-      m => `${m}\n"extends": ["${pkg.name}/${fileName}"],`,
+      (m) => `${m}\n"extends": ["${pkg.name}/${fileName}"],`,
     )
   }
 

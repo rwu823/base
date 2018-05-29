@@ -7,7 +7,7 @@ const mkdir = promisify(fs.mkdir)
 const findExistsParent = promisify((fileName, callback) => {
   const parent = dirname(fileName)
 
-  fs.exists(parent, isExists => {
+  fs.exists(parent, (isExists) => {
     if (isExists) {
       callback(null, parent)
     } else {
@@ -16,8 +16,8 @@ const findExistsParent = promisify((fileName, callback) => {
   })
 })
 
-const mkdirp = pathWithPath =>
-  findExistsParent(pathWithPath).then(parent => {
+const mkdirp = (pathWithPath) =>
+  findExistsParent(pathWithPath).then((parent) => {
     const dirs = pathWithPath.replace(`${parent}/`, '').split(sep)
 
     dirs.reduce(
