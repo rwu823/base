@@ -1,7 +1,7 @@
 {
   "name": "@rwu823/base",
   "description": "The infrastructure of init project",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "bin": {
     "base-init": "bin/base-init"
