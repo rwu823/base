@@ -1,0 +1,67 @@
+version: 2
+
+vars:
+  init: &init
+    environment:
+      - TZ: Asia/Taipei
+
+    docker:
+      - image: circleci/node:8
+
+jobs:
+  Lint:
+    <<: *init
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - restore_cache:
+          keys:
+            - node_modules#{{ checksum "package-lock.json" }}
+      - run: npm i
+      - run: npm run lint
+      - save_cache:
+          key: node_modules#{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+  Build:
+    <<: *init
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - restore_cache:
+          key: node_modules#{{ checksum "package-lock.json" }}
+      - run: npm i
+      - run: npm run build
+      - save_cache:
+          key: node_modules#{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+    Deploy:
+      <<: *init
+      steps:
+        - setup_remote_docker:
+            docker_layer_caching: true
+        - checkout
+        - restore_cache:
+            key: node_modules#{{ checksum "package-lock.json" }}
+        - run: npm i
+        - run: node scripts/deploy
+
+workflows:
+  version: 2
+  Test & Deployment:
+    jobs:
+      - Lint
+      - Build
+      - Deploy:
+          requires:
+            - Lint
+            - Build
+          filters:
+            branches:
+              only:
+                - master
