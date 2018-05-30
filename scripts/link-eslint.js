@@ -14,10 +14,10 @@ const isExists = (p) => {
     return false
   }
 }
-const eslintPath = cwd(`/node_modules/${scope}/eslint-config-base`)
+const eslintPath = cwd(`/node_modules/${scope}/eslint-config`)
 
 if (isExists(cwd(`/node_modules/${pkg.name}`)) && !isExists(eslintPath)) {
-  fs.symlink('./base/eslint-config-base', eslintPath, (error) => {
+  fs.symlink('./base/eslint-config', eslintPath, (error) => {
     if (error) {
       console.log(error)
     }

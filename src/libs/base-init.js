@@ -8,6 +8,8 @@ const { parseJSON, stringify } = require('../utils/JSON')
 const { readFile, exists, mkdir } = require('../utils/fs')
 const packageJSON = require('../../package.json')
 
+const [scope] = packageJSON.name.split('/')
+
 Promise.all([
   glob('.eslintrc*'),
   glob('tslint.json'),
@@ -23,7 +25,7 @@ Promise.all([
   } else {
     write(
       stringify({
-        extends: [packageJSON.name],
+        extends: [scope],
       }),
     ).to('.eslintrc')
   }

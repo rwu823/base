@@ -6,11 +6,11 @@
     "prettier/react",
     "prettier/standard"
   ],
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
   "env": {
     "es6": true,
-    "browser": true,
-    "node": true,
-    "jest": true,
     "shelljs": true
   },
   "parser": "babel-eslint",
@@ -22,6 +22,7 @@
   },
 
   "rules": {
+    "no-console": 0,
     "global-require": 0,
     "no-unused-expressions": [2, { "allowTaggedTemplates": true }],
     "consistent-return": 0,
