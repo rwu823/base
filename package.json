@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
     "@babel/node": "^7.0.0-beta.49",
     "babel-eslint": "^8.2.3",
     "chalk": "^2.4.1",
@@ -42,7 +43,8 @@
   "scripts": {
     "lint": "eslint . --ignore-path .gitignore",
     "build:eslint": "node scripts/build-eslint",
-    "build": "run-p build:*"
+    "build": "run-p build:*",
+    "postinstall": "node scripts/link-eslint"
   },
   "husky": {
     "hook": {
