@@ -40,7 +40,7 @@
     "typescript": "^2.9.2"
   },
   "scripts": {
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "eslint `git diff origin/master..HEAD --name-only -- '*.js'`",
     "build:eslint": "node scripts/build-eslint",
     "build": "run-p build:*",
     "postinstall": "node scripts/link-eslint"
