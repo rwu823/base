@@ -4,10 +4,6 @@
     "out/**/*"
   ],
   "compilerOptions": {
-    "plugins": [
-      { "name": "typescript-styled-plugin" }
-    ],
-
     /* =Module Resolution Options */
     // "baseUrl": ".",
     // "paths": {
@@ -23,10 +19,13 @@
     // "allowJs": true,
     // "checkJs": true,
     "removeComments": true,
-    "jsx": "preserve",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "declaration": true,
     "outDir": "out",
     "module": "commonjs",
+    "newLine": "lf",
     "typeRoots": [
       "node_modules/@types",
       "./types"
@@ -36,6 +35,7 @@
     "strict": true,
     // "noImplicitAny": true,
     // "strictNullChecks": true,
+    // "strictPropertyInitialization": true,
     // "strictFunctionTypes": true,
     // "noImplicitThis": true,
     // "alwaysStrict": true,
