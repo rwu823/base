@@ -16,9 +16,10 @@
       "type": "node",
       "request": "launch",
       "name": "ts",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node",
       "args": [
-        "${relativeFile}"
+        "--require",
+        "ts-node/register",
+        "${relativeFile}",
       ]
     }
   ]
