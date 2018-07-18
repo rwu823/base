@@ -52,8 +52,8 @@
     "postinstall": "node scripts/link-eslint"
   },
   "husky": {
-    "hook": {
-      "precommit": "lint-staged"
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

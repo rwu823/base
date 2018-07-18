@@ -73,8 +73,15 @@ module.exports = Object.assign(base, {})
     pkg.scripts = {}
   }
 
-  if (!pkg.scripts.precommit) {
-    pkg.scripts.precommit = packageJSON.scripts.precommit
+  //  husky
+  if (!pkg.husky && !pkg.husky.hooks && !pkg.husky.hooks['pre-commit']) {
+    Object.assign(pkg, {
+      husky: {
+        hooks: {
+          'pre-commit': packageJSON.husky.hooks['pre-commit'],
+        },
+      },
+    })
   }
 
   if (!pkg['lint-staged']) {
