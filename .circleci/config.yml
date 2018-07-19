@@ -38,14 +38,24 @@ vars:
       name: Setup NPM
       command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 
-  set_env: &set_env
+  setup_git: &setup_git
     run:
-      name: Set Env
+      name: Setup Git
+      command: |
+        git config --global user.name "CircleCI"
+        git config --global user.email "auto_deploy@circleci.com"
+
+  export_env: &export_env
+    run:
+      name: Export Env
       command: |
         echo 'export IMAGE=$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_SHA1' >> $BASH_ENV
+        echo 'export GIT_TAG=v$(cat package.json | grep version | cut -d '\''"'\'' -f4)' >> $BASH_ENV
+
         source $BASH_ENV
 
         echo $IMAGE
+        echo $GIT_TAG
 
   docker_build: &docker_build
     run:
@@ -100,9 +110,9 @@ jobs:
     <<: *init
     steps:
       - checkout
-      - run: git config --global user.name "CircleCI"
-      - run: git config --global user.email "auto_deploy@circleci.com"
-      - run: git tag v`cat package.json | grep version | cut -d '"' -f4`
+      - *setup_git
+      - *export_env
+      - run: git tag $GIT_TAG
       - run: git push https://$GH_TOKEN@github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git --tags
 
   npm publish:
