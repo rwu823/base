@@ -65,6 +65,9 @@ vars:
         docker images $IMAGE
         docker history $IMAGE
 
+  push_coverage: &push_coverage
+    run: curl -s https://codecov.io/bash | bash
+
   setup_gcloud: &setup_gcloud
     run:
       name: Setup GCloud
