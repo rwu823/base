@@ -1,7 +1,9 @@
 {
   "exclude": [
     "node_modules",
-    "out/**/*"
+    "out/**/*",
+    "**/*.spec.ts",
+    "**/*.test.ts",
   ],
   "compilerOptions": {
     /* =Module Resolution Options */
