@@ -17,6 +17,16 @@ vars:
     restore_cache:
       key: node_modules#{{ checksum "package-lock.json" }}
 
+  save_build:  &save_build
+    save_cache:
+      key: out#{{ .Revision }}
+      paths:
+        - out
+
+  restore_build:  &restore_build
+    restore_cache:
+      key: out#{{ .Revision }}
+
   branch_not_deploy: &branch_not_deploy
     filters:
       branches:
