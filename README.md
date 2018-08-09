@@ -1,14 +1,15 @@
-<p align="center">
+<h1 align="center">
   Infrastructure
-</p>
+</h1>
+
 <p align="center">
+  <a href="https://github.com/rwu823/base/releases">
+    <img src="https://flat.badgen.net/github/release/rwu823/base" />
+  </a>
   <a href="https://circleci.com/gh/rwu823/base" alt="Build Status">
-    <img src="https://circleci.com/gh/rwu823/base.svg" />
+    <img src="https://flat.badgen.net/circleci/github/rwu823/base/master" />
   </a>
-  <a href="https://codecov.io/gh/rwu823/base" alt="Coverage">
-    <img src="https://img.shields.io/codecov/c/github/rwu823/base/BRANCH.svg?style=flat-square&" />
-  </a>
-  <img src="https://img.shields.io/github/license/rwu823/base.svg?style=flat-square&" />
+  <img src="https://flat.badgen.net/github/license/rwu823/base" />
 </p>
 
 ## Infrastructure
@@ -24,65 +25,11 @@ Everything you need. it includes:
 ## Installation
 
 ```sh
-yarn add --dev \
-https://github.com/rwu823/base\#eslint-config-base \
-https://github.com/rwu823/base
+npm i -D https://github.com/rwu823/base
 ```
 
 ## Initialization
 
-Add in `.eslintrc`
-
-```json
-{
-  "extends": ["@rwu823/base"]
-}
-```
-
-Add in `tslint.json`
-
-```json
-{
-  "extends": ["@rwu823/base/tslint"]
-}
-```
-
-Add in `prettier.config.js`
-
-```js
-const base = require('@rwu823/base/prettier.config')
-
-module.exports = Object.assign(base, {})
-```
-
-Add in `tsconfig.json`
-
-```json
-{
-  "extends": "./tsconfig.base"
-}
-```
-
-Add in `package.json`
-
-```json
-"scripts": {
-  "precommit": "lint-staged"
-},
-"lint-staged": {
-  "*.{ts,tsx}": [
-    "prettier --write --parser typescript",
-    "git add"
-  ],
-  "*.{js,jsx,css,md}": [
-    "prettier --write --parser babylon",
-    "git add"
-  ]
-},
-```
-
-Or run initialization command:
-
 ```sh
-yarn base-init
+npx base-init
 ```

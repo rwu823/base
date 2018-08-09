@@ -61,7 +61,7 @@
       "prettier --write --parser typescript",
       "git add"
     ],
-    "*.{js,jsx,css,md}": [
+    "*.{js,jsx,css}": [
       "prettier --write --parser babylon",
       "git add"
     ]
