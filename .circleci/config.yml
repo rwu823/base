@@ -61,6 +61,7 @@ vars:
       command: |
         echo 'export IMAGE=$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_SHA1' >> $BASH_ENV
         echo 'export GIT_TAG=v$(cat package.json | grep version | cut -d '\''"'\'' -f4)' >> $BASH_ENV
+        echo 'export GIT_REPO=https://$GH_TOKEN@github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git' >> $BASH_ENV
 
         source $BASH_ENV
 
@@ -126,7 +127,7 @@ jobs:
       - *setup_git
       - *export_env
       - run: git tag $GIT_TAG
-      - run: git push https://$GH_TOKEN@github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git --tags
+      - run: git push $GIT_REPO $GIT_TAG
 
   npm publish:
     <<: *init
