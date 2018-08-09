@@ -25,7 +25,7 @@ Everything you need. it includes:
 ## Installation
 
 ```sh
-npm i -D https://github.com/rwu823/base
+npm i -D github:rwu823/base
 ```
 
 ## Initialization
@@ -33,3 +33,6 @@ npm i -D https://github.com/rwu823/base
 ```sh
 npx base-init
 ```
+
+## Version Convention
+base's major version base on `Babel`'s version then suffix YY.M.D. So it looks like `7.0.0-18.8.9`.
