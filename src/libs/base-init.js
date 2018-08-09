@@ -87,10 +87,11 @@ module.exports = Object.assign(base, {})
   }
 
   if (!pkg['lint-staged']) {
-    pkg['lint-staged'] = {}
+    Object.assign(pkg, {
+      'lint-staged': packageJSON['lint-staged'],
+    })
   }
 
-  Object.assign(pkg['lint-staged'], packageJSON['lint-staged'])
   write(stringify(pkg)).to('package.json')
 
   /**
