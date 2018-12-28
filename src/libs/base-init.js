@@ -1,6 +1,5 @@
 // const { extname } = require('path')
-const { promisify } = require('util')
-const glob = promisify(require('glob'))
+const glob = require('fast-glob')
 const c = require('chalk')
 
 const write = require('../utils/write')

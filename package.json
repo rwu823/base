@@ -1,7 +1,7 @@
 {
   "name": "@rwu823/base",
   "description": "The infrastructure of init project",
-  "version": "7.2.0-18.12.11",
+  "version": "7.2.3-18.12.28",
   "main": "index.js",
   "bin": {
     "base-init": "bin/base-init"
@@ -10,46 +10,33 @@
   "author": "Rocky Wu <rwu823@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-stage-0": "^7.0.0",
-    "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.12",
-    "@types/react": "^16.7.13",
-    "jest": "^23.6.0",
-    "npm-run-all": "^4.1.5",
-    "sh-exec": "^2.1.0"
+    "@babel/preset-env": "7.2.3",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-stage-0": "7.0.0",
+    "@types/jest": "23.3.10",
+    "@types/node": "10.12.18",
+    "@types/react": "16.7.18",
+    "jest": "23.6.0",
+    "npm-run-all": "4.1.5",
+    "sh-exec": "2.1.0"
   },
   "dependencies": {
-    "@babel/core": "^7.2.0",
-    "@babel/node": "^7.2.0",
-    "babel-eslint": "^10.0.1",
-    "chalk": "^2.4.1",
-    "eslint": "^5.10.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-import-resolver-babel-module": "^5.0.0-beta.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.11.1",
-    "glob": "^7.1.3",
-    "husky": "^1.2.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.15.3",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "tslint-config-airbnb": "^5.11.1",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.2.2"
-  },
-  "scripts": {
-    "lint": "eslint `git diff origin/master..HEAD --name-only -- '*.js'`",
-    "build:eslint": "node scripts/build-eslint",
-    "build": "run-p build:*",
-    "postinstall": "node scripts/link-eslint"
+    "@babel/core": "7.2.2",
+    "@babel/node": "7.2.2",
+    "babel-eslint": "10.0.1",
+    "chalk": "2.4.1",
+    "eslint": "5.11.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "3.3.0",
+    "eslint-import-resolver-babel-module": "5.0.0-beta.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react": "7.12.0",
+    "fast-glob": "^2.2.4",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.0",
+    "prettier": "1.15.3"
   },
   "husky": {
     "hooks": {
@@ -65,5 +52,11 @@
       "prettier --write --parser babylon",
       "git add"
     ]
+  },
+  "scripts": {
+    "lint": "eslint `git diff origin/master..HEAD --name-only -- '*.js'`",
+    "build:eslint": "node scripts/build-eslint",
+    "build": "run-p build:*",
+    "postinstall": "node scripts/link-eslint"
   }
 }
